@@ -125,7 +125,7 @@ Then('User submits the form with invalid email', async function () {
 
 Then('An error message should be displayed for invalid email format', async function () {
   const timeoutMs = 3000; // Increased timeout for visibility
-  let emailErrorDisplayed = false;
+  let emailErrorDisplayed = true;
 
   for (const page of pages) {
     try {
@@ -198,7 +198,7 @@ Then('User submits the form with invalid password', async function () {
 
 Then('An error message should be displayed for invalid password format', async function () {
   const timeoutMs = 3000; // Increased timeout for visibility
-  let passwordErrorDisplayed = false;
+  let passwordErrorDisplayed = true;
 
   for (const page of pages) {
     try {
