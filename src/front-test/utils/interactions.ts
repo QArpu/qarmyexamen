@@ -29,6 +29,10 @@ export const getElementAndCheckIt = async (page: Page) => {
   page.getByRole("checkbox").check();
 };
 
+export const checkElementById = async (page: Page, id: string) => {
+  await page.locator(`#${id}`).check();
+};
+
 export const getTextboxAndClear = async (page: Page) => {
   page.getByRole("textbox").clear();
 };
@@ -107,3 +111,20 @@ export const getByLocator = async (page: Page, locator: LocatorType) => {
 export const getByLocatorAndFillIt = async (page: Page, locator: LocatorType, value: string) => {
   await page.locator(locator).fill(value);
 };
+
+export const getByIdAndFillIt = async (page: Page, id: string, value: string) => {
+  await page.locator(`#${id}`).fill(value);
+};
+
+export const selectOptionByRoleAndName = async (page: Page, name: string, optionText: string) => {
+  await page.getByRole('combobox', { name: name }).selectOption({ label: optionText });
+};
+
+export const selectByValue = async (
+  page: Page,
+  locator: LocatorType,
+  value: string
+) => {
+  return await page.locator(locator).selectOption(value);
+};
+
